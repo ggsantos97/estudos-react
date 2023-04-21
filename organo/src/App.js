@@ -66,7 +66,6 @@ function App() {
   const [colaboradores, setColaboradores] = useState(inicial)
 
   function deletarColaborador(id) {
-    console.log(id)
     setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id));
   }
 

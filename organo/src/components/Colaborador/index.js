@@ -2,7 +2,7 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import './Colaborador.css'
 
 const Colaborador = ({colaborador,corDeFundo, aoDeletar}) => {
-    console.log('colaborador:',colaborador)
+
     return (<div className='colaborador'>
          <AiFillCloseCircle 
             size={25} className="deletar" 
