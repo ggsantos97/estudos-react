@@ -51,6 +51,7 @@ function App() {
       nome: 'GUSTAVO GOMES',
       cargo: 'Full Stack Developer',
       imagem: 'https://github.com/ggsantos97.png',
+      github: 'https://github.com/ggsantos97',
       time: times[0].nome
     },
     {
@@ -58,6 +59,7 @@ function App() {
       nome: 'RUBENS DIEGO',
       cargo: 'Full Stack Developer',
       imagem: 'https://github.com/Hazarinn.png',
+      github: 'https://github.com/Hazarinn',
       time: times[0].nome
     },
     

@@ -4,7 +4,7 @@ import './Colaborador.css'
 const Colaborador = ({colaborador,corDeFundo, aoDeletar}) => {
 
     return (<div className='colaborador'>
-         <AiFillCloseCircle 
+         <AiFillCloseCircle style={{cursor: 'pointer'}}
             size={25} className="deletar" 
             onClick={() => aoDeletar(colaborador.id)} 
         />
@@ -12,7 +12,7 @@ const Colaborador = ({colaborador,corDeFundo, aoDeletar}) => {
             <img src={colaborador.imagem} alt={colaborador.nome}/>
         </div>
         <div className='rodape'>
-            <h4>{colaborador.nome}</h4>
+            <a href={colaborador.github} ><h4>{colaborador.nome}</h4></a>
             <h5>{colaborador.cargo}</h5>
         </div>
     </div>)
