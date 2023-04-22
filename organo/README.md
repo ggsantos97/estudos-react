@@ -1,4 +1,4 @@
-# Rodando em https://vercel.com/trevoogustavo/estudos-react
+# Rodando em https://organo-react-seven.vercel.app/
 
 # Getting Started with Create React App
 
