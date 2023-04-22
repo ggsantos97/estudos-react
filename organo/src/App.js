@@ -81,6 +81,7 @@ function App() {
   }
 
   function cadastrarTime({ nome, cor }) {
+    console.log(nome, cor)
     setTimes([...times, { nome, cor, id: uuidv4() }])
   }
 
