@@ -4,6 +4,7 @@ import Formulario from "./components/Formulario";
 import Rodape from "./components/Rodape";
 import Time from "./components/Time";
 import { v4 as uuidv4 } from 'uuid';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
 
@@ -81,31 +82,38 @@ function App() {
   }
 
   function cadastrarTime({ nome, cor }) {
-    console.log(nome, cor)
     setTimes([...times, { nome, cor, id: uuidv4() }])
   }
 
 
   return (
-    <div>
-      <Banner />
-      <Formulario 
-        aoCriarTime={cadastrarTime} 
-        times={times.map(time => time.nome)} 
-        aoCadastrar={colaborador => setColaboradores([...colaboradores, colaborador])} 
-      />
-      <section className="times">
-        <h1>Minha organização</h1>
-        {times.map((time, indice) => 
-        <Time 
-          mudarCor={mudarCor} 
-          key={indice}
-          time={time} 
-          colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)} 
-          aoDeletar={deletarColaborador} />)}
-      </section>
-      <Rodape />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={
+            <>
+                <Banner />
+                <Formulario 
+                  aoCriarTime={cadastrarTime} 
+                  times={times.map(time => time.nome)} 
+                  aoCadastrar={colaborador => setColaboradores([...colaboradores, colaborador])} 
+                />
+                <section className="times">
+                  <h1>Minha organização</h1>
+                  {times.map((time, indice) => 
+                  <Time 
+                    mudarCor={mudarCor} 
+                    key={indice}
+                    time={time} 
+                    colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)} 
+                    aoDeletar={deletarColaborador} />)}
+                </section>
+                <Rodape />
+            </>
+        }/>
+        <Route path="login" element={<div>Página de login em construção</div>}/>
+      </Routes>
+    </BrowserRouter>
+ 
   );
 }
 
