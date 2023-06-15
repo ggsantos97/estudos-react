@@ -1,9 +1,19 @@
 import Banner from "components/Banner";
 import Card from "components/Card";
 import Title from "components/Title";
-import videos from 'json/db.json';
+
 import styles from './home.module.css'
+import { useEffect, useState } from "react";
 function Home() {
+    const [videos, setVideos] = useState([]);
+    useEffect(()=> {
+        fetch('https://my-json-server.typicode.com/ggsantos97/db-json/videos')
+        .then(response => response.json())
+        .then(data => {
+            setVideos(data)
+        })
+
+    }, [])
     return (
         <>
 
